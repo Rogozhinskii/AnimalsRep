@@ -1,10 +1,12 @@
 ﻿namespace AnimalsLib.Interfaces
 {
-    public interface IRepository<T> where T : class, ITypedAnimal, new()
+    public interface IRepository
     {
-        List<T> Animals { get; }
-        void Add(T animal);
-        void Remove(T animal);
+        ISaver SaveMode { get; set; }
+        List<IAnimal> Animals { get; set; }
+        void Add(IAnimal animal);
+        void Remove(IAnimal animal);
+        void Save(string savePath);
 
-    }
+    }    
 }

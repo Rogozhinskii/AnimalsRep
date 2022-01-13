@@ -20,10 +20,14 @@ namespace AnimalsLib
         /// <param name="kind">вид животного</param>
         /// <param name="deph">максимальная глубина погружения</param>
         public Amphibians(string squad, string kind,int deph) 
-            : base(squad, kind)
-        {
-            AnimalType = AnimalType.Amphibians;
+            : base(AnimalType.Amphibians,squad, kind)
+        {            
             MaxImmersionDepth = deph;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"Max Immersion Depth:{MaxImmersionDepth};";
         }
     }
 }

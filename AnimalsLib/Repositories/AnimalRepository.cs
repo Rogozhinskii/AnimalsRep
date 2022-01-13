@@ -2,26 +2,22 @@
 
 namespace AnimalsLib.Repositories
 {
-    public class AnimalRepository<T> : IRepository<T> where T : class,ITypedAnimal, new()
+    internal class AnimalRepository : IRepository
     {
-        private List<T> _animals;
-        public List<T> Animals => _animals;
+        public ISaver SaveMode { get; set; }
+        public List<IAnimal> Animals { get; set; }
 
-        public AnimalRepository()
-        {
-            _animals = new List<T>();
+        public AnimalRepository(){
+            Animals = new List<IAnimal>();
         }
+        public virtual void Add(IAnimal animal)=>
+            Animals.Add(animal);
 
-        public AnimalRepository(IEnumerable<T> items)
-            :this()
-        {
-            _animals.AddRange(items);
-        }
+        public virtual void Remove(IAnimal animal)=>
+            Animals.Remove(animal);
 
-        public void Add(T animal)=>
-            _animals.Add(animal);
-
-        public void Remove(T animal)=>
-            _animals.Remove(animal);
+        public virtual void Save(string savePath)=>
+            SaveMode.SaveData(savePath, Animals);
+        
     }
 }

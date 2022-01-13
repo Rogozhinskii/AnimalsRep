@@ -5,14 +5,14 @@ namespace AnimalsLib
     /// <summary>
     /// Базовый класс для всех птиц
     /// </summary>
-    public class Birds : Animal,ITypedAnimal
+    public class Birds : Animal
     {
         /// <summary>
         /// Размах крыльев
         /// </summary>
         public double Wingspan { get; set; }
 
-        public AnimalType AnimalType { get; }
+        
 
         /// <summary>
         /// Для создания птиц
@@ -21,10 +21,14 @@ namespace AnimalsLib
         /// <param name="kind">вид животного</param>
         /// <param name="wingspen">размах крыльев</param>
         public Birds(string squad, string kind,double wingspen) 
-            : base(squad, kind)
-        {
-            AnimalType = AnimalType.Birds;
+            : base(AnimalType.Birds,squad, kind)
+        {            
             Wingspan = wingspen;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"Wingspan:{Wingspan};";
         }
     }
 }

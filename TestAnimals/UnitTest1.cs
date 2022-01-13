@@ -1,5 +1,6 @@
 using AnimalsLib;
 using AnimalsLib.Repositories;
+using AnimalsLib.Savers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestAnimals
@@ -10,15 +11,21 @@ namespace TestAnimals
         [TestMethod]
         public void FactoryTest()
         {
-            //var factory = new AmphibiansFactory(20);
-
-            //var ee = factory.CreateAnimal("орел","dsfads","dsfs");
+            var factory = new BirdsFactory(1.15);
+            Birds ee = (Birds)factory.CreateAnimal("falcon", "dsfads", "dsfs");
 
             //var factory2 = new MammalsFactory(false);
             //var dd = factory2.CreateAnimal("lion", "dsfdsda", "sdfadsdfas");
 
-            AnimalRepository<Birds> _birdsRep = new();
+            
+            var rep=RepositoryFactory.GetRepository(AnimalType.Birds);
+            rep.SaveMode = new XlsxSaver();
+            rep.Add(ee);
+
+            rep.Save(@"C:\Users\rogoz\OneDrive\Рабочий стол\Test\test");
+            
 
         }
+
     }
 }

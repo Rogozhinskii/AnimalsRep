@@ -2,7 +2,9 @@
 {
     public interface IAnimal
     {
-        
+        /// <summary>
+        /// Тип животного
+        /// </summary>
         public AnimalType AnimalType { get; }
 
         /// <summary>

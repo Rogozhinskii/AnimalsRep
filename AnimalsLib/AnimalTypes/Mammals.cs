@@ -5,14 +5,12 @@ namespace AnimalsLib
     /// <summary>
     /// Базовый класс для всех представителей млекопитающих
     /// </summary>
-    public class Mammals : Animal,ITypedAnimal
+    public class Mammals : Animal
     {
         /// <summary>
         /// Находится ли живоетное под угрозой вымирания
         /// </summary>
         public bool Extinction { get; set; }
-
-        public AnimalType AnimalType { get; }
 
         /// <summary>
         /// Для создания млекопитающих 
@@ -21,10 +19,14 @@ namespace AnimalsLib
         /// <param name="kind">вид животного</param>
         /// <param name="isExtinct">Вымирает ли вид</param>
         public Mammals(string squad, string kind,bool isExtinct) 
-            : base(squad, kind)
-        {
-            AnimalType = AnimalType.Mammals;
+            : base(AnimalType.Mammals,squad, kind)
+        {            
             Extinction = isExtinct;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"Extinction:{Extinction};";
         }
     }
 }
