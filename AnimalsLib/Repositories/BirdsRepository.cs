@@ -5,10 +5,8 @@ namespace AnimalsLib.Repositories
     internal class BirdsRepository : AnimalRepository
     {
         public override void Add(IAnimal animal)
-        {
-            if (animal is Birds)
-                Animals.Add(animal);
-            else throw new InvalidCastException("Репозиторий только для птиц");
+        {           
+            Animals.Add(animal);           
         }
 
         public override void Remove(IAnimal animal)
@@ -17,6 +15,10 @@ namespace AnimalsLib.Repositories
                 Animals.Remove(animal);
             else throw new InvalidCastException("Репозиторий только для птиц");
         }
-        
+
+        protected override void FillRepository()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

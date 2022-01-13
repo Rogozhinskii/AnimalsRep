@@ -3,21 +3,26 @@
     public abstract class Animal : IAnimal
     {        
         
-        public string AnimalSquad { get; }
+        public string AnimalFamily { get; }
         public string AnimalKind { get; }
-        public AnimalType AnimalType { get; }
+        public AnimalSquard AnimalSquard { get; }
 
-        public Animal(AnimalType type, string squad,string kind)
+        public bool IsExtinct { get; }
+
+        public string Name => GetType().Name;
+
+        public Animal(AnimalSquard squard, string family,string kind,bool isExtinct)
         {                       
-            if(string.IsNullOrEmpty(squad)) throw new ArgumentNullException(nameof(squad));
+            if(string.IsNullOrEmpty(family)) throw new ArgumentNullException(nameof(family));
             if(string.IsNullOrEmpty(kind)) throw new ArgumentNullException(nameof(kind));
-            AnimalType = type;
-            AnimalSquad = squad;
+            AnimalSquard = squard;
+            AnimalFamily = family;
             AnimalKind = kind;
+            IsExtinct = isExtinct;
         }
 
         public override string ToString() =>
-            $"AnimalType:{AnimalType};AnimalSquad:{AnimalSquad};AnimalKind:{AnimalKind};";
+            $"AnimalType:{AnimalSquard};AnimalSquad:{AnimalFamily};AnimalKind:{AnimalKind};IsExtinct:{IsExtinct}";
 
     }
 }

@@ -2,8 +2,9 @@
 {
     internal class Squirrel : Mammals
     {
-        public Squirrel(string squad, string kind, bool isExtinct) 
-            : base(squad, kind,isExtinct)
+
+        public Squirrel(string family, string kind, bool isExtinct) 
+            : base(family, kind, isExtinct)
         {
         }
     }

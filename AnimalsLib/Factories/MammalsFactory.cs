@@ -4,12 +4,12 @@ using System.Reflection;
 namespace AnimalsLib
 {
     public class MammalsFactory : AnimalFactory
-    {
-        private readonly bool _isExtinct;
+    {       
+        public bool IsExtinct { get; set; }
 
         public MammalsFactory(bool isExtinct)
         {
-            _isExtinct = isExtinct;
+            IsExtinct = isExtinct;
         }
 
 
@@ -33,7 +33,7 @@ namespace AnimalsLib
             if (animalType.IsAbstract) throw new MemberAccessException($"Не возможно создать объект {nameof(concreteAnimalName)}, т.к. он является абстрактным");
             var constructor = animalType.GetConstructor(new Type[] { typeof(string), typeof(string), typeof(bool) })
                 ?? throw new NullReferenceException($"не найдет подходящий конструктов у типа или тип абстрактный");
-            return (IAnimal)constructor.Invoke(new object[] { squad, kind, _isExtinct });
+            return (IAnimal)constructor.Invoke(new object[] { squad, kind, IsExtinct });
 
         }
     }

@@ -2,9 +2,11 @@
 {
     internal class UnknownAnimal : Animal
     {
-        public UnknownAnimal(AnimalType type=AnimalType.Unknown, 
-                       string squad="не понятный", 
-                       string kind="не определен") : base(type, squad, kind)
+
+        public UnknownAnimal(AnimalSquard squad = AnimalSquard.Unknown, 
+                       string family="не понятный", 
+                       string kind="не определен",
+                       bool isExtinct=false) : base(squad, family, kind, isExtinct)
         {
         }
     }

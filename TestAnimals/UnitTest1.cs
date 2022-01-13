@@ -11,14 +11,14 @@ namespace TestAnimals
         [TestMethod]
         public void FactoryTest()
         {
-            var factory = new BirdsFactory(1.15);
-            Birds ee = (Birds)factory.CreateAnimal("falcon", "dsfads", "dsfs");
+           var factory=new AnimalFactory();
+            var ee = factory.GetAnimal(AnimalSquard.Amphibians, "frog", "dsfsfdsds","sdfsddsf", false);
 
             //var factory2 = new MammalsFactory(false);
             //var dd = factory2.CreateAnimal("lion", "dsfdsda", "sdfadsdfas");
 
             
-            var rep=RepositoryFactory.GetRepository(AnimalType.Birds);
+            var rep=RepositoryFactory.GetRepository(AnimalSquard.Birds);
             rep.SaveMode = new XlsxSaver();
             rep.Add(ee);
 

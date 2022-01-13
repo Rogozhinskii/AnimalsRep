@@ -5,11 +5,11 @@ namespace AnimalsLib
 {
     public class AmphibiansFactory : AnimalFactory
     {
-        private readonly int maxImmersionDepth;
+        public int MaxImmersionDepth { get; set; }
 
         public AmphibiansFactory(int maxImmersionDepth)
         {
-            this.maxImmersionDepth = maxImmersionDepth;
+            MaxImmersionDepth = maxImmersionDepth;
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace AnimalsLib
             if (animalType.IsAbstract) throw new MemberAccessException($"Не возможно создать объект {nameof(concreteAnimalName)}, т.к. он является абстрактным");
             var constructor = animalType.GetConstructor(new Type[] { typeof(string), typeof(string), typeof(int) })
                 ?? throw new NullReferenceException($"не найдет подходящий конструктов у типа или тип абстрактный");
-            return (IAnimal)constructor.Invoke(new object[] { squad, kind, maxImmersionDepth });
+            return (IAnimal)constructor.Invoke(new object[] { squad, kind, MaxImmersionDepth });
 
         }
 

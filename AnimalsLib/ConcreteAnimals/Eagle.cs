@@ -2,8 +2,8 @@
 {
     internal class Eagle : Birds
     {
-        public Eagle(string squad, string kind, double wingspen) 
-            : base(squad, kind,wingspen)
+        public Eagle(string family, string kind, bool isExtinct) 
+            : base(family, kind, isExtinct)
         {
         }
     }

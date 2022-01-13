@@ -2,8 +2,9 @@
 {
     internal class Turtle : Amphibians
     {
-        public Turtle(string squad, string kind, int deph) 
-            : base(squad, kind,deph)
+               
+        public Turtle(string family, string kind,bool isExtinct) 
+            : base(family, kind,isExtinct)
         {
         }
     }

@@ -2,7 +2,9 @@
 {
     internal class Frog : Amphibians
     {
-        public Frog(string squad, string kind, int deph) : base(squad, kind, deph)
+
+        public Frog(string family, string kind, bool isExtinct) 
+            : base(family, kind, isExtinct)
         {
         }
     }

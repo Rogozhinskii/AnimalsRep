@@ -2,8 +2,9 @@
 {
     internal class Owl : Birds
     {
-        public Owl(string squad, string kind, double wingspen) 
-            : base(squad, kind, wingspen)
+
+        public Owl(string family, string kind, bool isExtinct) 
+            : base(family, kind, isExtinct)
         {
         }
     }

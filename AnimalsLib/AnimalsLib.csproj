@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Factories\AmphibiansFactory.cs" />
+    <Compile Remove="Factories\BirdsFactory.cs" />
+    <Compile Remove="Factories\MammalsFactory.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 

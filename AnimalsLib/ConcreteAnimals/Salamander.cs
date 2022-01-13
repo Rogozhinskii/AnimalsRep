@@ -2,8 +2,9 @@
 {
     internal class Salamander : Amphibians
     {
-        public Salamander(string squad, string kind, int deph) 
-            : base(squad, kind, deph)
+
+        public Salamander(string family, string kind, bool isExtinct) 
+            : base(family, kind, isExtinct)
         {
         }
     }

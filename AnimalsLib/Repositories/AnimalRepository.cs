@@ -2,13 +2,17 @@
 
 namespace AnimalsLib.Repositories
 {
-    internal class AnimalRepository : IRepository
+    internal abstract class AnimalRepository : IRepository
     {
         public ISaver SaveMode { get; set; }
         public List<IAnimal> Animals { get; set; }
+        public bool AutoFill { get; set; }
 
         public AnimalRepository(){
-            Animals = new List<IAnimal>();
+            if (!AutoFill)
+                Animals = new List<IAnimal>();            
+            else
+                FillRepository();
         }
         public virtual void Add(IAnimal animal)=>
             Animals.Add(animal);
@@ -18,6 +22,8 @@ namespace AnimalsLib.Repositories
 
         public virtual void Save(string savePath)=>
             SaveMode.SaveData(savePath, Animals);
+
+        protected abstract void FillRepository();
         
     }
 }

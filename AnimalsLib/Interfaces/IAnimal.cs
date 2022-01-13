@@ -3,18 +3,27 @@
     public interface IAnimal
     {
         /// <summary>
-        /// Тип животного
+        /// Название животного
         /// </summary>
-        public AnimalType AnimalType { get; }
-
+        public string Name { get;}
         /// <summary>
         /// Отряд животного
         /// </summary>
-        public string AnimalSquad { get;}
+        public AnimalSquard AnimalSquard { get; }
+
+        /// <summary>
+        /// Семейство животного
+        /// </summary>
+        public string AnimalFamily { get;}
         /// <summary>
         /// Вид животного
         /// </summary>
         public string AnimalKind { get;}
+
+        /// <summary>
+        /// Вымирает ли вид
+        /// </summary>
+        public bool IsExtinct { get;}
 
     }
 }

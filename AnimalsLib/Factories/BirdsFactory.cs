@@ -4,12 +4,12 @@ using System.Reflection;
 namespace AnimalsLib
 {
     public class BirdsFactory : AnimalFactory
-    {
-        private readonly double _wingspan;
+    {        
+        public double Wingspan { get; set; }
 
         public BirdsFactory(double wingspan)
         {
-            _wingspan = wingspan;
+            Wingspan = wingspan;
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace AnimalsLib
         /// <exception cref="MemberAccessException">исключение будет выбрашено при попытке создать экземпляр абстрактного класса</exception>
         /// <exception cref="NullReferenceException">исключение будет выбрашего при попытке вызова конструктора не удовлетворяющего параметрам
         /// базового конструктора абстрактного класса <see cref="BirdsFactory"/></exception>
-        public override IAnimal CreateAnimal(string concreteAnimalName, string squad, string kind)
+        public IAnimal GetAnimal(AnimalSquard animalSquard, string concreteAnimalName, string family, string kind, bool isExtinct)
         {
             Type? animalType = Assembly.GetAssembly(GetType())
                                        .GetTypes()
@@ -32,7 +32,7 @@ namespace AnimalsLib
             if (animalType.IsAbstract) throw new MemberAccessException($"Не возможно создать объект {nameof(concreteAnimalName)}, т.к. он является абстрактным");
             var constructor = animalType.GetConstructor(new Type[] { typeof(string), typeof(string), typeof(double) })
                 ?? throw new NullReferenceException($"не найдет подходящий конструктов у типа или тип абстрактный");
-            return (IAnimal)constructor.Invoke(new object[] { squad, kind, _wingspan });
+            return (IAnimal)constructor.Invoke(new object[] { squad, kind, Wingspan });
 
         }
     }

@@ -2,8 +2,8 @@
 {
     internal class Dog : Mammals
     {
-        public Dog(string squad, string kind,bool isExtinct) 
-            : base(squad, kind,isExtinct)
+        public Dog(string family, string kind,bool isExtinct) 
+            : base(family, kind,isExtinct)
         {
         }
     }

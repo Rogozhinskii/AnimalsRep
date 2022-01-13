@@ -18,6 +18,9 @@ namespace AnimalsLib.Repositories
             else throw new InvalidCastException("Репозиторий только для млекопитающих");
         }
 
-      
+        protected override void FillRepository()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

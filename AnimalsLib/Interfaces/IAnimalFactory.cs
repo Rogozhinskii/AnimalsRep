@@ -1,7 +1,7 @@
 ﻿namespace AnimalsLib
 {
     public interface IAnimalFactory
-    {        
-        public IAnimal CreateAnimal(string type, string squad, string kind);
+    {
+        public IAnimal GetAnimal(AnimalSquard squad, string concreteAnimalName, string family, string kind, bool isExtinct);
     }
 }

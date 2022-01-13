@@ -8,27 +8,14 @@ namespace AnimalsLib
     public class Birds : Animal
     {
         /// <summary>
-        /// Размах крыльев
-        /// </summary>
-        public double Wingspan { get; set; }
-
-        
-
-        /// <summary>
         /// Для создания птиц
         /// </summary>
-        /// <param name="squad">отряд животного</param>
+        /// <param name="family">отряд животного</param>
         /// <param name="kind">вид животного</param>
-        /// <param name="wingspen">размах крыльев</param>
-        public Birds(string squad, string kind,double wingspen) 
-            : base(AnimalType.Birds,squad, kind)
-        {            
-            Wingspan = wingspen;
-        }
+        /// <param name="isExtinct">вымирает true/false</param>
+        public Birds(string family, string kind, bool isExtinct)
+            : base(AnimalSquard.Birds, family, kind,isExtinct) { }
 
-        public override string ToString()
-        {
-            return base.ToString() + $"Wingspan:{Wingspan};";
-        }
+        
     }
 }

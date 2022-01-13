@@ -1,10 +1,8 @@
-﻿using Newtonsoft.Json.Converters;
-using System.Runtime.Serialization;
-using System.Text.Json.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace AnimalsLib
-{    
-    public enum AnimalType
+{
+    public enum AnimalSquard
     {
         [EnumMember(Value= "Mammals")]
         Mammals,

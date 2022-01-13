@@ -2,6 +2,7 @@
 {
     public interface IRepository
     {
+        public bool AutoFill { get; set; }
         ISaver SaveMode { get; set; }
         List<IAnimal> Animals { get; set; }
         void Add(IAnimal animal);
