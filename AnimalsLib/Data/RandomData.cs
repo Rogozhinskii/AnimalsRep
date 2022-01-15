@@ -1,12 +1,13 @@
 ﻿namespace AnimalsLib.Data
 {
-    internal class RandomData
+    public class RandomData
     {
         private readonly static string[] _amphibiansSquard;
         private readonly static string[] _birdsSquard;
         private readonly static string[] _mammalsSquard;
         private readonly static string[] _families;
-        private readonly static string[] kinds;
+        private readonly static string[] _kinds;
+        private readonly static bool[] _extinct;
         private static Random rnd;
 
         static RandomData()
@@ -28,7 +29,7 @@
             {
                 "dog",
                 "lion",
-                "squirel"
+                "squirrel"
             };
             _families = new string[]
             {
@@ -40,7 +41,7 @@
                 "тушкашчиковые",
                 "беличьи"
             };
-            kinds = new string[]
+            _kinds = new string[]
             {
                 "обыкновешшый",
                 "африканский",
@@ -48,6 +49,10 @@
                 "глубоководный",
                 "мерзкий",
                 "длинноухий",
+            };
+            _extinct = new bool[]
+            {
+                false,true
             };
         }
 
@@ -84,7 +89,10 @@
         /// </summary>
         /// <returns></returns>
         public static string GetRandomKinds() =>
-           rnd.NextItem(_families);
+           rnd.NextItem(_kinds);
+
+        public static bool GetRandomExtinct() =>
+          rnd.NextItem(_extinct);
 
 
     }

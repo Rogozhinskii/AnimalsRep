@@ -1,0 +1,272 @@
+[
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Owl, AnimalsLib",
+    "Id": "f86eb697-7702-4fce-87d6-a83becbf6c3a",
+    "AnimalFamily": "бессяжковые",
+    "AnimalKind": "снежный",
+    "AnimalSquard": "Birds",
+    "IsExtinct": false,
+    "Name": "Owl"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Turtle, AnimalsLib",
+    "Id": "941dc952-a12f-428b-aa51-09df17f59fe7",
+    "AnimalFamily": "Лососёвые",
+    "AnimalKind": "глубоководный",
+    "AnimalSquard": "Amphibians",
+    "IsExtinct": false,
+    "Name": "Turtle"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Dog, AnimalsLib",
+    "Id": "a84d0f86-0685-443b-87fe-4b7651a29d66",
+    "AnimalFamily": "кошачьи",
+    "AnimalKind": "снежный",
+    "AnimalSquard": "Mammals",
+    "IsExtinct": false,
+    "Name": "Dog"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Falcon, AnimalsLib",
+    "Id": "9a58c875-6279-4ae8-9b7b-294b2d3a038d",
+    "AnimalFamily": "жабы",
+    "AnimalKind": "глубоководный",
+    "AnimalSquard": "Birds",
+    "IsExtinct": false,
+    "Name": "Falcon"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Salamander, AnimalsLib",
+    "Id": "d5f51a0b-a44c-48c1-aedf-574d4aa16cff",
+    "AnimalFamily": "беличьи",
+    "AnimalKind": "африканский",
+    "AnimalSquard": "Amphibians",
+    "IsExtinct": true,
+    "Name": "Salamander"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Lion, AnimalsLib",
+    "Id": "fa11c333-e483-446a-9492-eaddae4af804",
+    "AnimalFamily": "тушкашчиковые",
+    "AnimalKind": "снежный",
+    "AnimalSquard": "Mammals",
+    "IsExtinct": true,
+    "Name": "Lion"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Owl, AnimalsLib",
+    "Id": "1621a5fa-1e9f-4869-bf49-3a42af1d896e",
+    "AnimalFamily": "беличьи",
+    "AnimalKind": "длинноухий",
+    "AnimalSquard": "Birds",
+    "IsExtinct": false,
+    "Name": "Owl"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Frog, AnimalsLib",
+    "Id": "b8ef06ce-9fa7-41a1-bb3f-480a50320f21",
+    "AnimalFamily": "бессяжковые",
+    "AnimalKind": "снежный",
+    "AnimalSquard": "Amphibians",
+    "IsExtinct": false,
+    "Name": "Frog"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Dog, AnimalsLib",
+    "Id": "9caf38c3-d939-4a4e-8f92-4f8f7d8c9b7c",
+    "AnimalFamily": "тушкашчиковые",
+    "AnimalKind": "африканский",
+    "AnimalSquard": "Mammals",
+    "IsExtinct": false,
+    "Name": "Dog"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Eagle, AnimalsLib",
+    "Id": "17269630-6c51-4636-8fdb-355115bfb4af",
+    "AnimalFamily": "бессяжковые",
+    "AnimalKind": "обыкновешшый",
+    "AnimalSquard": "Birds",
+    "IsExtinct": true,
+    "Name": "Eagle"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Salamander, AnimalsLib",
+    "Id": "dba1d3b8-df19-4d0a-b92f-7d5ede38b6a0",
+    "AnimalFamily": "тушкашчиковые",
+    "AnimalKind": "снежный",
+    "AnimalSquard": "Amphibians",
+    "IsExtinct": false,
+    "Name": "Salamander"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Dog, AnimalsLib",
+    "Id": "d20de101-660d-44d2-90af-159a1e40bdc8",
+    "AnimalFamily": "жабы",
+    "AnimalKind": "снежный",
+    "AnimalSquard": "Mammals",
+    "IsExtinct": true,
+    "Name": "Dog"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Eagle, AnimalsLib",
+    "Id": "28975730-cc22-4df4-b9a4-3c0f3d24c877",
+    "AnimalFamily": "беличьи",
+    "AnimalKind": "длинноухий",
+    "AnimalSquard": "Birds",
+    "IsExtinct": false,
+    "Name": "Eagle"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Frog, AnimalsLib",
+    "Id": "f528f2b0-c8a8-4529-a4d3-b6152e23f943",
+    "AnimalFamily": "жабы",
+    "AnimalKind": "мерзкий",
+    "AnimalSquard": "Amphibians",
+    "IsExtinct": false,
+    "Name": "Frog"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Squirrel, AnimalsLib",
+    "Id": "11ead2f1-aba3-4b6f-a2fe-90d4a9e9acde",
+    "AnimalFamily": "хордовые",
+    "AnimalKind": "африканский",
+    "AnimalSquard": "Mammals",
+    "IsExtinct": false,
+    "Name": "Squirrel"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Falcon, AnimalsLib",
+    "Id": "2091d666-c29f-42d7-9586-f9b8aea5c625",
+    "AnimalFamily": "Лососёвые",
+    "AnimalKind": "глубоководный",
+    "AnimalSquard": "Birds",
+    "IsExtinct": true,
+    "Name": "Falcon"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Salamander, AnimalsLib",
+    "Id": "b1e9b0d5-475d-4f1d-bd48-43d06c1e34ed",
+    "AnimalFamily": "жабы",
+    "AnimalKind": "глубоководный",
+    "AnimalSquard": "Amphibians",
+    "IsExtinct": true,
+    "Name": "Salamander"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Squirrel, AnimalsLib",
+    "Id": "149e3dcb-a885-4d07-88c9-c6830c5095c7",
+    "AnimalFamily": "Лососёвые",
+    "AnimalKind": "африканский",
+    "AnimalSquard": "Mammals",
+    "IsExtinct": true,
+    "Name": "Squirrel"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Owl, AnimalsLib",
+    "Id": "f9ce4a37-ea80-422d-bb3a-8d1b2c3602f6",
+    "AnimalFamily": "хордовые",
+    "AnimalKind": "обыкновешшый",
+    "AnimalSquard": "Birds",
+    "IsExtinct": true,
+    "Name": "Owl"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Salamander, AnimalsLib",
+    "Id": "8e518f42-e2c9-4f13-9c99-81da5c9ada97",
+    "AnimalFamily": "кошачьи",
+    "AnimalKind": "обыкновешшый",
+    "AnimalSquard": "Amphibians",
+    "IsExtinct": false,
+    "Name": "Salamander"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Squirrel, AnimalsLib",
+    "Id": "8b48f6f9-54b2-4425-abf6-3cef564cfcaa",
+    "AnimalFamily": "беличьи",
+    "AnimalKind": "снежный",
+    "AnimalSquard": "Mammals",
+    "IsExtinct": false,
+    "Name": "Squirrel"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Eagle, AnimalsLib",
+    "Id": "9df0dedd-b591-4961-81a5-4342e0659522",
+    "AnimalFamily": "бессяжковые",
+    "AnimalKind": "длинноухий",
+    "AnimalSquard": "Birds",
+    "IsExtinct": true,
+    "Name": "Eagle"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Turtle, AnimalsLib",
+    "Id": "6cabd82e-0b4c-4647-9613-b58f4f77793f",
+    "AnimalFamily": "кошачьи",
+    "AnimalKind": "мерзкий",
+    "AnimalSquard": "Amphibians",
+    "IsExtinct": true,
+    "Name": "Turtle"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Squirrel, AnimalsLib",
+    "Id": "7c6dd4f7-d419-4ae3-af75-5b17417da2a7",
+    "AnimalFamily": "кошачьи",
+    "AnimalKind": "длинноухий",
+    "AnimalSquard": "Mammals",
+    "IsExtinct": true,
+    "Name": "Squirrel"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Falcon, AnimalsLib",
+    "Id": "81384f79-104d-4097-a9f2-02c8ceb65779",
+    "AnimalFamily": "хордовые",
+    "AnimalKind": "снежный",
+    "AnimalSquard": "Birds",
+    "IsExtinct": true,
+    "Name": "Falcon"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Frog, AnimalsLib",
+    "Id": "6f3bce62-e909-48cb-8444-9636a86f3b2f",
+    "AnimalFamily": "жабы",
+    "AnimalKind": "длинноухий",
+    "AnimalSquard": "Amphibians",
+    "IsExtinct": true,
+    "Name": "Frog"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Lion, AnimalsLib",
+    "Id": "b69614ff-3e2b-45b8-8ee1-1208612e04bc",
+    "AnimalFamily": "хордовые",
+    "AnimalKind": "длинноухий",
+    "AnimalSquard": "Mammals",
+    "IsExtinct": true,
+    "Name": "Lion"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Owl, AnimalsLib",
+    "Id": "7f77305b-663c-48af-bfb0-59d3120e542e",
+    "AnimalFamily": "тушкашчиковые",
+    "AnimalKind": "мерзкий",
+    "AnimalSquard": "Birds",
+    "IsExtinct": false,
+    "Name": "Owl"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Turtle, AnimalsLib",
+    "Id": "e0de6da5-c25a-4d5f-a7f3-45318e8bd26d",
+    "AnimalFamily": "бессяжковые",
+    "AnimalKind": "африканский",
+    "AnimalSquard": "Amphibians",
+    "IsExtinct": false,
+    "Name": "Turtle"
+  },
+  {
+    "$type": "AnimalsLib.ConcreteAnimals.Squirrel, AnimalsLib",
+    "Id": "fefb4884-7f98-4b35-a9b1-64d52c5f4a1d",
+    "AnimalFamily": "тушкашчиковые",
+    "AnimalKind": "длинноухий",
+    "AnimalSquard": "Mammals",
+    "IsExtinct": true,
+    "Name": "Squirrel"
+  }
+]

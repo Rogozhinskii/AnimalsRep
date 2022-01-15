@@ -7,11 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AnimalsLib\AnimalsLib.csproj" />
+    <None Remove="Images\animals.png" />
+    <None Remove="Images\julian.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Events\" />
+    <EmbeddedResource Include="Images\animals.png" />
+    <EmbeddedResource Include="Images\julian.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AnimalsLib\AnimalsLib.csproj" />
   </ItemGroup>
 
 </Project>

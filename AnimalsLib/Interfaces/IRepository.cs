@@ -1,13 +1,15 @@
 ﻿namespace AnimalsLib.Interfaces
 {
-    public interface IRepository
-    {
-        public bool AutoFill { get; set; }
+    public interface IRepository<T>
+    {        
         ISaver SaveMode { get; set; }
-        List<IAnimal> Animals { get; set; }
-        void Add(IAnimal animal);
-        void Remove(IAnimal animal);
-        void Save(string savePath);
+        List<T> Items { get; set; }
+        void Add(T item);
+        void Remove(T item);
+        //void Update(T item);
+        
+        void SaveTo(string savePath);
+        void Commit();
 
     }    
 }

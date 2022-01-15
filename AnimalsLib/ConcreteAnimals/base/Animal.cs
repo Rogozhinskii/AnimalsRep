@@ -1,15 +1,15 @@
 ﻿namespace AnimalsLib
 {
     public abstract class Animal : IAnimal
-    {        
-        
-        public string AnimalFamily { get; }
-        public string AnimalKind { get; }
-        public AnimalSquard AnimalSquard { get; }
+    {
+        public Guid Id { get; set; }
+        public string AnimalFamily { get; set; }
+        public string AnimalKind { get; set; }
+        public AnimalSquard AnimalSquard { get; set; }
 
-        public bool IsExtinct { get; }
+        public bool IsExtinct { get; set; }
 
-        public string Name => GetType().Name;
+        public string Name => GetType().Name;        
 
         public Animal(AnimalSquard squard, string family,string kind,bool isExtinct)
         {                       
@@ -22,7 +22,7 @@
         }
 
         public override string ToString() =>
-            $"AnimalType:{AnimalSquard};AnimalSquad:{AnimalFamily};AnimalKind:{AnimalKind};IsExtinct:{IsExtinct}";
+            $"AnimalSquard:{AnimalSquard}; AnimalFamily:{AnimalFamily}; AnimalKind:{AnimalKind}; IsExtinct:{IsExtinct}";
 
     }
 }

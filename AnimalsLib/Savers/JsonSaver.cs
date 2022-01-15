@@ -4,6 +4,9 @@ using Newtonsoft.Json.Converters;
 
 namespace AnimalsLib.Savers
 {
+    /// <summary>
+    /// Выполняет сохранение в формат Json
+    /// </summary>
     public class JsonSaver : ISaver
     {
         private string SerializeData(List<IAnimal> animals)

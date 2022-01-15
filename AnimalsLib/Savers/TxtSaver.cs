@@ -3,8 +3,16 @@ using System.Text;
 
 namespace AnimalsLib.Savers
 {
+    /// <summary>
+    ///Выполняет сохраение в текстовый формат 
+    /// </summary>
     public class TxtSaver : ISaver
     {
+        /// <summary>
+        /// Преобразует коллекцию объектов с строковое представление
+        /// </summary>
+        /// <param name="animals"></param>
+        /// <returns></returns>
         private string PrepareData(List<IAnimal> animals)
         {
             StringBuilder sb = new();

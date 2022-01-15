@@ -9,11 +9,7 @@ namespace AnimalPlanet.Services
     {
 
 
-        public IRepository GetRepository(AnimalSquard animalSquard)
-        {            
-            return RepositoryFactory.GetRepository(animalSquard);
-        }
-
+       
         private void FillRepository()
         {
 
