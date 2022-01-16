@@ -6,7 +6,14 @@ namespace AnimalsLib
 {
     public class AnimalFactory : IAnimalFactory
     {
+        /// <summary>
+        /// Хранилище в котором соотнесены виды животных и его представители
+        /// </summary>
         private readonly ISquardsRepository<string> _squarsRepository;
+
+        /// <summary>
+        /// Тип создаваемого животного
+        /// </summary>
         private Type _typeOfCreationObject;
         public AnimalFactory(ISquardsRepository<string> squarsRepository)
         {
@@ -38,7 +45,11 @@ namespace AnimalsLib
             return animal;
         }
 
-
+        /// <summary>
+        /// Возвращает тип создаваемого животного по его названию
+        /// </summary>
+        /// <param name="concreteAnimalName"></param>
+        /// <returns></returns>
         private Type GetTypeByObjectName(string concreteAnimalName) =>
                     Assembly.GetAssembly(GetType())
                             .GetTypes()

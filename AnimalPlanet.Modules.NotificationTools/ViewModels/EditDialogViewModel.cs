@@ -9,14 +9,24 @@ using System.Runtime.CompilerServices;
 
 namespace AnimalPlanet.Modules.NotificationTools.ViewModels
 {
+    /// <summary>
+    /// вью модель для диалогового окна редактирования объекта
+    /// </summary>
     internal class EditDialogViewModel : DialogViewModel
     {
         public EditDialogViewModel()
         {
             Title = "Edit Dialog";
         }
+
+        /// <summary>
+        /// Словарь для сохранения изменившихся свойств
+        /// </summary>
         protected readonly Dictionary<string, object> _values = new();
 
+        /// <summary>
+        /// Ссылка на исходный объект
+        /// </summary>
         private IAnimal _orginalAnimal;
 
         public string Name { get => GetValue(_orginalAnimal?.Name); set => SetValue(value); }
@@ -60,7 +70,13 @@ namespace AnimalPlanet.Modules.NotificationTools.ViewModels
                var result = new DialogResult(ButtonResult.Cancel);
                RaiseRequestClose(result);
            });
-       
+
+        /// <summary>
+        /// Устанавливает значение в словарь свойств изменяемого объекта 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="property"></param>
+        /// <returns></returns>
         protected virtual bool SetValue(object value, [CallerMemberName] string property = null)
         {
             if (_values.TryGetValue(property, out var oldValue) && Equals(oldValue, value))
@@ -69,6 +85,13 @@ namespace AnimalPlanet.Modules.NotificationTools.ViewModels
             return true;
         }
 
+        /// <summary>
+        /// Возвращает значение из словаря изменившихся свойст по имени свойству 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Default"></param>
+        /// <param name="property"></param>
+        /// <returns></returns>
         protected virtual T GetValue<T>(T Default, [CallerMemberName] string property = null)
         {
             if (_values.TryGetValue(property, out var value))

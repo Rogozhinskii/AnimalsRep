@@ -10,6 +10,14 @@ namespace AnimalPlanet.Core.Converters
     /// </summary>
     public class BoolToColorConverter : ValueConverterBase
     {
+        /// <summary>
+        /// если true, то красная кисть, иначе зеленая. На вход подается булевское значение описывающие вымирает ли вид животного
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if(value != null){

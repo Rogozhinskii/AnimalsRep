@@ -12,6 +12,9 @@ namespace AnimalPlanet.ViewModels
     internal class MainWindowViewModel:BindableBase
     {
         private string _title="Animal Planet";
+        /// <summary>
+        /// связующая модель между MainWindow и MainWindowViewModel
+        /// </summary>
         private readonly IMainWindowModel _mainWindowModel;
         private DelegateCommand _squardChangedCommand;
         private DelegateCommand _editAnimalCommand;
@@ -27,7 +30,7 @@ namespace AnimalPlanet.ViewModels
         public MainWindowViewModel(IMainWindowModel mainWindowModel)
         {
             _mainWindowModel = mainWindowModel;
-            _mainWindowModel.UpdateData(SelectedSquard);
+            _mainWindowModel.LoadData(SelectedSquard);
             _animalsViewSource = new CollectionViewSource();
             _animalsViewSource.Source = _mainWindowModel.Animals;
            
@@ -44,6 +47,10 @@ namespace AnimalPlanet.ViewModels
         }
 
         private IAnimal _selectedAnimal;
+
+        /// <summary>
+        /// Выбранное животное
+        /// </summary>
         public IAnimal SelectedAnimal
         {
             get { return _selectedAnimal; }
@@ -51,16 +58,22 @@ namespace AnimalPlanet.ViewModels
         }
 
         private SaveOptions _selectedSaveOption;
+        /// <summary>
+        /// Выбранный формат в который сохраняется данные
+        /// </summary>
         public SaveOptions SelectedSaveOption
         {
             get { return _selectedSaveOption; }
             set { SetProperty(ref _selectedSaveOption, value); }
         }
 
+        /// <summary>
+        /// Выполняется при смене отображаемого отряда животных
+        /// </summary>
         public DelegateCommand SquardChangedCommand =>
            _squardChangedCommand ??= _squardChangedCommand = new (() =>
            {               
-               _mainWindowModel.UpdateData(SelectedSquard);
+               _mainWindowModel.LoadData(SelectedSquard);
            });
 
         
@@ -103,7 +116,9 @@ namespace AnimalPlanet.ViewModels
            });
       
 
-
+        /// <summary>
+        /// Обновляет представление
+        /// </summary>
         public void RefreshView() =>
             _animalsViewSource.View.Refresh();
 

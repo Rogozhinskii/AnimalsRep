@@ -1,5 +1,8 @@
 ﻿namespace AnimalsLib.ConcreteAnimals
 {
+    /// <summary>
+    /// Для создания непонятного животного
+    /// </summary>
     internal class UnknownAnimal : Animal
     {
 

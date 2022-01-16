@@ -1,5 +1,8 @@
 ﻿namespace AnimalsLib
 {
+    /// <summary>
+    /// Интерфейс для всех описываемых животин
+    /// </summary>
     public interface IAnimal
     {
         public Guid Id { get; set; }

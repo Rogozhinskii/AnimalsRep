@@ -10,9 +10,18 @@ using System.Collections.ObjectModel;
 
 namespace AnimalPlanet.Models
 {
+    /// <summary>
+    /// Главная модель приложения
+    /// </summary>
     internal class MainWindowModel : IMainWindowModel
     {
+        /// <summary>
+        /// Хранилище животных
+        /// </summary>
         private readonly IRepository<IAnimal> _repository;
+        /// <summary>
+        /// Фабрика для получения списка животных конкретного типа
+        /// </summary>
         private readonly ISquardFactory _squardFactory;
         private readonly IDialogService _dialogService;
 
@@ -23,22 +32,37 @@ namespace AnimalPlanet.Models
             _dialogService = dialogService;
         }
 
+        /// <summary>
+        /// Коллекция загружаемых объектов
+        /// </summary>
         public ObservableCollection<IAnimal> Animals { get; set; } = new ObservableCollection<IAnimal>();
 
-        public void UpdateData()
+        /// <summary>
+        /// Загружает объекты из хранилища
+        /// </summary>
+        public void LoadData()
         {
             Animals.Clear();
             var newAnimals = _repository.Items;
             Animals.AddRange(newAnimals);
         }
 
-        public void UpdateData(AnimalSquard animalSquard)
+        /// <summary>
+        /// Загружает объекты из хранилища
+        /// </summary>
+        /// <param name="animalSquard">конкретный тип животного</param>
+        public void LoadData(AnimalSquard animalSquard)
         {
             Animals.Clear();
             var newAnimals = _squardFactory.GetAnimalsBySquard(animalSquard);
             Animals.AddRange(newAnimals);
         }
 
+        /// <summary>
+        /// Вызывает окна редактирования животного 
+        /// </summary>
+        /// <param name="SelectedAnimal"></param>
+        /// <param name="animalSquard"></param>
         public void EditAnimal(IAnimal SelectedAnimal, AnimalSquard animalSquard)
         {
             if (SelectedAnimal == null) return;
@@ -51,6 +75,9 @@ namespace AnimalPlanet.Models
              });
         }
 
+        /// <summary>
+        /// Выполняет добавление животины в хранилище
+        /// </summary>
         public void AddAnimal()
         {
             try
@@ -60,7 +87,7 @@ namespace AnimalPlanet.Models
                     if (r.Result != ButtonResult.OK) return;
                     var newAnimal = r.Parameters.GetValue<IAnimal>(CommonTypesPrism.Editableobject);
                     _repository.Add(newAnimal);
-                    UpdateData(newAnimal.AnimalSquard);
+                    LoadData(newAnimal.AnimalSquard);
                     ShowNotificationDialog(DialogType.NotificationDialog, "Добавлено новое животное");
                 });
             }
@@ -71,12 +98,16 @@ namespace AnimalPlanet.Models
         }
 
 
+        /// <summary>
+        /// Удаляет животное из хранилища
+        /// </summary>
+        /// <param name="animal"></param>
         public void Remove(IAnimal animal)
         {
             try
             {
                 _repository.Remove(animal);
-                UpdateData(animal.AnimalSquard);
+                LoadData(animal.AnimalSquard);
                 ShowNotificationDialog(DialogType.NotificationDialog, "Запись удалена");
             }
             catch (Exception ex)
@@ -86,6 +117,11 @@ namespace AnimalPlanet.Models
            
         }
 
+        /// <summary>
+        /// Вызывает окна уведомлений
+        /// </summary>
+        /// <param name="dialogType"></param>
+        /// <param name="message"></param>
         public void ShowNotificationDialog(DialogType dialogType, string message)
         {
             var parameters = new DialogParameters
@@ -106,7 +142,7 @@ namespace AnimalPlanet.Models
                     break;
             }
         }
-
+                
         public void SaveToFile(string filePath, SaveOptions options)
         {
             try

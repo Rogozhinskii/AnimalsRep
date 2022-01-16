@@ -25,30 +25,12 @@ namespace AnimalsLib.Repositories
         
         public Dictionary<AnimalSquard, List<string>> Squard { get;private set; }
 
-        public void Add(string item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(string item)
-        {
-            throw new NotImplementedException();
-        }
-        
-        public void SaveTo(string savePath)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Commit()
         {
             string json = JsonConvert.SerializeObject(Squard);
             File.WriteAllText(filePath, json);
         }
 
-        public void Update(string item)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

@@ -16,7 +16,7 @@ namespace AnimalPlanet.Modules.NotificationTools
         {
             containerRegistry.RegisterDialog<EditDialog, EditDialogViewModel>();
             containerRegistry.RegisterDialog<AddDialog, AddDialogViewModel>();
-            containerRegistry.RegisterDialog<ErrorNotification, ErrorNotificationViewModel>();
+            containerRegistry.RegisterDialog<ErrorNotification, NotificationDialogViewModel>();
             containerRegistry.RegisterDialog<NotificationDialog, NotificationDialogViewModel>();
         }
     }

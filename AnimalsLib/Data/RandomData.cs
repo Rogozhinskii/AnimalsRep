@@ -1,12 +1,31 @@
 ﻿namespace AnimalsLib.Data
 {
+    /// <summary>
+    /// Класс для случайной генерации животных
+    /// </summary>
     public class RandomData
     {
+        /// <summary>
+        /// массив различных отрядов амфибий
+        /// </summary>
         private readonly static string[] _amphibiansSquard;
+        /// <summary>
+        /// массив различных отрядов птиц
+        /// </summary>
         private readonly static string[] _birdsSquard;
+        /// <summary>
+        /// массив различных отрядов млекопитающих
+        /// </summary>
         private readonly static string[] _mammalsSquard;
+        /// <summary>
+        /// массив различных семейств животных
+        /// </summary>
         private readonly static string[] _families;
+        /// <summary>
+        /// массив различных видов животных
+        /// </summary>
         private readonly static string[] _kinds;
+        
         private readonly static bool[] _extinct;
         private static Random rnd;
 

@@ -2,6 +2,7 @@
 
 namespace AnimalsLib
 {
+   
     [TypeConverter(typeof(EnumDescriptionTypeConverter))]
     public enum SaveOptions
     {

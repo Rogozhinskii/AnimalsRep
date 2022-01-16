@@ -1,5 +1,8 @@
 ﻿namespace AnimalPlanet.Core
 {
+    /// <summary>
+    /// Константы для работы с сервисом диалогов
+    /// </summary>
     public class CommonTypesPrism
     {
         public const string ErrorNotification = "ErrorNotification";

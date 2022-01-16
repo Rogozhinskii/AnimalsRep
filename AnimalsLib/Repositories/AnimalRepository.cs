@@ -41,13 +41,7 @@ namespace AnimalsLib.Repositories
 
         public virtual void SaveTo(string savePath)=>
             SaveMode.SaveData(savePath, Items);
-
-        //public void Update(IAnimal item)
-        //{
-        //    var animal=Items.SingleOrDefault(x=>x.Id==item.Id);
-        //    animal = item;
-        //}
-
+                
         public void Commit()
         {
             JsonSerializerSettings settings = new()
