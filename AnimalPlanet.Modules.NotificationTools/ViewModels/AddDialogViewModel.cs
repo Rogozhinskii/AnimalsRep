@@ -3,6 +3,7 @@ using AnimalPlanet.Modules.NotificationTools.ViewModels.Base;
 using AnimalsLib;
 using Prism.Commands;
 using Prism.Services.Dialogs;
+using System;
 
 namespace AnimalPlanet.Modules.NotificationTools.ViewModels
 {
@@ -15,6 +16,8 @@ namespace AnimalPlanet.Modules.NotificationTools.ViewModels
         /// Что-то что содержит фабричный метод создания объекта
         /// </summary>
         private readonly IAnimalFactory _animalFactory;
+        private readonly IDialogService _dialogService;
+
         public string Name {get;set;}
         /// <summary>
         /// Семейство
@@ -30,9 +33,10 @@ namespace AnimalPlanet.Modules.NotificationTools.ViewModels
         public AnimalSquard AnimalSquard { get; set; }
         public bool IsExtinct { get; set; }
 
-        public AddDialogViewModel(IAnimalFactory animalFactory)
+        public AddDialogViewModel(IAnimalFactory animalFactory,IDialogService dialogService)
         {
             _animalFactory = animalFactory;
+            _dialogService = dialogService;
         }
 
         private DelegateCommand _saveNewAnimalCommand;
@@ -42,10 +46,26 @@ namespace AnimalPlanet.Modules.NotificationTools.ViewModels
         public DelegateCommand SaveNewAnimalCommand =>
            _saveNewAnimalCommand ??= _saveNewAnimalCommand = new(() =>
            {
-               var newAnimal=_animalFactory.GetAnimal(Name,AnimalFamily,AnimalKind,IsExtinct);
-               DialogResult result = new DialogResult(ButtonResult.OK);
-               result.Parameters.Add(CommonTypesPrism.Editableobject,newAnimal);
-               RaiseRequestClose(result);
+               try
+               {
+                   var newAnimal = _animalFactory.GetAnimal(Name, AnimalFamily, AnimalKind, IsExtinct);
+                   DialogResult result = new DialogResult(ButtonResult.OK);
+                   result.Parameters.Add(CommonTypesPrism.Editableobject, newAnimal);
+                   RaiseRequestClose(result);
+               }
+               catch(NullReferenceException ex)
+               {
+                   ShowNotificationDialog(DialogType.ErrorDialog, ex.Message);
+               }
+               catch (MemberAccessException ex)
+               {
+                   ShowNotificationDialog(DialogType.ErrorDialog, ex.Message);                   
+               }
+               catch(Exception ex)
+               {
+                   ShowNotificationDialog(DialogType.ErrorDialog, ex.Message);
+               }
+              
            });
 
         private DelegateCommand _cancelCommand;
@@ -62,5 +82,32 @@ namespace AnimalPlanet.Modules.NotificationTools.ViewModels
            });
 
 
+
+
+        /// <summary>
+        /// Вызывает окна уведомлений
+        /// </summary>
+        /// <param name="dialogType"></param>
+        /// <param name="message"></param>
+        public void ShowNotificationDialog(DialogType dialogType, string message)
+        {
+            var parameters = new DialogParameters
+            {
+                { CommonTypesPrism.DialogMessage, message }
+            };
+
+            switch (dialogType)
+            {
+                case DialogType.NotificationDialog:
+                    _dialogService.Show(CommonTypesPrism.NotificationDialog, parameters, null);
+                    break;
+                case DialogType.ErrorDialog:
+                    _dialogService.Show(CommonTypesPrism.ErrorNotification, parameters, null);
+                    break;
+                default:
+                    _dialogService.Show(CommonTypesPrism.ErrorNotification, parameters, null);
+                    break;
+            }
+        }
     }
 }

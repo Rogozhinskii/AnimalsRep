@@ -91,10 +91,14 @@ namespace AnimalPlanet.Models
                     ShowNotificationDialog(DialogType.NotificationDialog, "Добавлено новое животное");
                 });
             }
-            catch (Exception ex)
+            catch (InvalidOperationException ex)
             {
-                ShowNotificationDialog(DialogType.ErrorDialog, ex.Message);                
-            }           
+                ShowNotificationDialog(DialogType.ErrorDialog, $"Ошбика добвлаения нового животного. Exception Message: {ex.Message}");                
+            }
+            catch(Exception ex)
+            {
+                ShowNotificationDialog(DialogType.ErrorDialog, $"Непредвиденная ошибка. Exception Message: {ex.Message}");
+            }
         }
 
 
@@ -110,11 +114,15 @@ namespace AnimalPlanet.Models
                 LoadData(animal.AnimalSquard);
                 ShowNotificationDialog(DialogType.NotificationDialog, "Запись удалена");
             }
+            catch (InvalidOperationException ex)
+            {
+                ShowNotificationDialog(DialogType.ErrorDialog, $"Ошбика добвлаения нового животного. Exception Message: {ex.Message}");
+            }
             catch (Exception ex)
             {
-                ShowNotificationDialog(DialogType.ErrorDialog, ex.Message);                
+                ShowNotificationDialog(DialogType.ErrorDialog, $"Непредвиденная ошибка. Exception Message: {ex.Message}");
             }
-           
+
         }
 
         /// <summary>
@@ -159,12 +167,15 @@ namespace AnimalPlanet.Models
                 _repository.SaveTo(filePath);
                 ShowNotificationDialog(DialogType.NotificationDialog, "Файл сохранен");
             }
+            catch (InvalidOperationException ex)
+            {
+                ShowNotificationDialog(DialogType.ErrorDialog, $"Ошбика добвлаения нового животного. Exception Message: {ex.Message}");
+            }
             catch (Exception ex)
             {
-                ShowNotificationDialog(DialogType.ErrorDialog, ex.Message);                
+                ShowNotificationDialog(DialogType.ErrorDialog, $"Непредвиденная ошибка. Exception Message: {ex.Message}");
             }
-           
-            
+
         }
     }
 }

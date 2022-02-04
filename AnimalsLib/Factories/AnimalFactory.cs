@@ -21,6 +21,17 @@ namespace AnimalsLib
         }
         public AnimalFactory() { }
 
+        /// <summary>
+        /// Возвращает экземпляр конкретного животного
+        /// </summary>
+        /// <param name="animalSquard"></param>
+        /// <param name="concreteAnimalName"></param>
+        /// <param name="family"></param>
+        /// <param name="kind"></param>
+        /// <param name="isExtinct"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="MemberAccessException"></exception>
         public IAnimal GetAnimal(AnimalSquard animalSquard, string concreteAnimalName, string family, string kind, bool isExtinct)
         {
             _typeOfCreationObject = GetTypeByObjectName(concreteAnimalName);
@@ -29,6 +40,8 @@ namespace AnimalsLib
             if (_typeOfCreationObject.IsAbstract) throw new MemberAccessException($"Не возможно создать объект {nameof(concreteAnimalName)}, т.к. он является абстрактным");
             return GetAnimal(family, kind, isExtinct);
         }
+
+       
         public IAnimal GetAnimal(string concreteAnimalName, string family, string kind, bool isExtinct)
         {
             _typeOfCreationObject = GetTypeByObjectName(concreteAnimalName);
@@ -36,6 +49,14 @@ namespace AnimalsLib
             return GetAnimal(family, kind, isExtinct);
         }
 
+        /// <summary>
+        /// Возвращает экземпляр конкретного животного
+        /// </summary>
+        /// <param name="family"></param>
+        /// <param name="kind"></param>
+        /// <param name="isExtinct"></param>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
         private IAnimal GetAnimal(string family, string kind, bool isExtinct)
         {
             var constructor = _typeOfCreationObject.GetConstructor(new Type[] { typeof(string), typeof(string), typeof(bool) })
